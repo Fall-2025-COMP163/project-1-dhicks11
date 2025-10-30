@@ -1,6 +1,7 @@
 import pytest
 import sys
 import os
+# python3 -m pytest 
 
 # Import student's code
 try:

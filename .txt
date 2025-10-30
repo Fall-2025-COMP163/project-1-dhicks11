@@ -1,0 +1,7 @@
+Character Name: 
+Class: clear
+Level: 1
+Strength: 5
+Magic: 5
+Health: 70
+Gold: 200

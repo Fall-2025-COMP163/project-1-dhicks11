@@ -96,7 +96,11 @@ def save_character(character, filename):
 
     # TODO: Implement this function
     # Remember to handle file errors gracefully
-
+    directory = os.path.dirname(filename)
+    if directory and not os.path.exists(directory):
+        # Directory does not exist
+        return False
+    
     f = open(filename, "w")
     f.write(f"Character Name: {character['name']}\n")
     f.write(f"Class: {character['class']}\n")
