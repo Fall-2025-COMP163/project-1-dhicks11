@@ -1,0 +1,7 @@
+Character Name: name
+Class: & C:/Users/dayle/AppData/Local/Programs/Python/Python313/python.exe c:/Users/dayle/github-classroom/Fall-2025-COMP163/project-1-dhicks11/project1_starter.py
+Level: 1
+Strength: 6
+Magic: 8
+Health: 75
+Gold: 200

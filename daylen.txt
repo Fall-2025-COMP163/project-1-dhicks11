@@ -1,0 +1,7 @@
+Character Name: Daylen
+Class: Warrior
+Level: 1
+Strength: 10
+Magic: 6
+Health: 154
+Gold: 200
