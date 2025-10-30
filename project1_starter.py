@@ -48,31 +48,33 @@ def calculate_stats(character_class, level):
     - Rogues: Medium strength, medium magic, low health
     - Clerics: Medium strength, high magic, high health
     """
-    # TODO: Implement this function
+# TODO: Implement this function
     if character_class == "Warrior":
-        strength = 10 + (level - 1) * 3
-        magic = 3 + (level - 1) * 1
-        health = 150 + (level - 1) * 20
+        base_str, base_mag, base_hp = 10, 3, 150
+        growth_str, growth_mag, growth_hp = 3, 1, 20
     elif character_class == "Mage":
-        strength = 5 + (level - 1) * 1
-        magic = 12 + (level - 1) * 4
-        health = 90 + (level - 1) * 10
+        base_str, base_mag, base_hp = 5, 12, 90
+        growth_str, growth_mag, growth_hp = 1, 4, 10
     elif character_class == "Rogue":
-        strength = 7 + (level - 1) * 2
-        magic = 7 + (level - 1) * 2
-        health = 80 + (level - 1) * 8
+        base_str, base_mag, base_hp = 7, 7, 80
+        growth_str, growth_mag, growth_hp = 2, 2, 8
     elif character_class == "Cleric":
-        strength = 6 + (level - 1) * 2
-        magic = 10 + (level - 1) * 3
-        health = 120 + (level - 1) * 15
+        base_str, base_mag, base_hp = 6, 10, 120
+        growth_str, growth_mag, growth_hp = 2, 3, 15
     else:
-        strength = 5 + (level - 1) * 1
-        magic = 5 + (level - 1) * 1
-        health = 70 + (level - 1) * 5
-    
-    strength += random.randint(0, 3)
-    magic += random.randint(0, 3)
-    health += random.randint(0, 5)
+        base_str, base_mag, base_hp = 5, 5, 70
+        growth_str, growth_mag, growth_hp = 1, 1, 5
+
+    # Calculate stats for current level
+    strength = base_str + (level - 1) * growth_str
+    magic    = base_mag + (level - 1) * growth_mag
+    health   = base_hp  + (level - 1) * growth_hp
+
+    # Add small random bonus only if level > 1
+    if level > 1:
+        strength += random.randint(0, 3)
+        magic += random.randint(0, 3)
+        health += random.randint(0, 5)
 
     return (strength, magic, health)
 
